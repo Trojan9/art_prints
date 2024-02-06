@@ -4,11 +4,12 @@
 
 package oop.ica.part1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  *
- * @author oluwatimilehinbanjo
+ * @author oluwatimilehinbanjo | confidenceantwi 
  */
 public class ArtsPrintsSystem {
 
@@ -17,7 +18,7 @@ public class ArtsPrintsSystem {
       
         //display name and advertising phrase
         System.out.println("");
-        System.out.println("Welcome to ART PRINTS,Where Walls Become Canvases: Art Prints for Every Space!");
+        System.out.println("Welcome to ART PRINTS, Where Walls Become Canvases: Art Prints for Every Space!");
         System.out.println("");
         
         //display the menu
@@ -31,23 +32,39 @@ public class ArtsPrintsSystem {
         //listen to keyboard and perform task
         int option=-1;
         while(option !=0){
-            option= keyboard.nextInt();
-            switch (option) {
-                case 1 -> {
-                    System.out.println("");
-                    System.out.println("View");
-                }
-                case 2 -> {
-                    System.out.println("");
-                     System.out.println("Buy");
-                }
-                case 3 -> {
-                    System.out.println("");
-                     System.out.println("Add");
-                }
-                default -> {
-                }
+           
+            // Using a try catch block to handle any wrong inputs
+            try{
+                
+                option= keyboard.nextInt();
+                
             }
+            catch(InputMismatchException e){  
+                keyboard.next();
+            }
+            
+            switch (option) {
+                    case 0 -> {
+                        System.out.print("Thanks for using our services, see you next time!");
+                    }
+                    case 1 -> {
+                        System.out.println("Your selected option is: ");
+                        System.out.println("View");
+                    }
+                    case 2 -> {
+                        System.out.println("Your selected option is: ");
+                         System.out.println("Buy");
+                    }
+                    case 3 -> {
+                        System.out.println("Your selected option is: ");
+                         System.out.println("Add");
+                    }
+
+                    default -> {
+                        System.out.println("You have entered an incorrect value, please try again!");
+                    }
+            }
+                
             //prints menu out if option is not to quit at the end of the task   
             if(option!=0){
                 System.out.println("");
@@ -57,8 +74,7 @@ public class ArtsPrintsSystem {
                 System.out.println("2. Buy");
                 System.out.println("3. Add");
                 System.out.println("0. Quit");
-            }
-            
-        }
+            }                       
+        }      
     }
 }
