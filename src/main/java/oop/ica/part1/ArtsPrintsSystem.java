@@ -17,31 +17,27 @@ import java.util.Scanner;
 public class ArtsPrintsSystem {
 
     public static void main(String[] args) {
+        // Create instance of Scanner class for taking user input
         Scanner keyboard = new Scanner(System.in);
 
-        // display name and advertising phrase
-        System.out.println("");
+        // Display name and advertising phrase
+        System.out.println("ART PRINTS");
         System.out.println("Welcome to ART PRINTS, Where Walls Become Canvases: Art Prints for Every Space!");
         System.out.println("");
 
-        // display the menu
+        // Display the menu
         System.out.println("MENU: ");
-        System.out.println("");
-        System.out.println("1. View");
-        System.out.println("2. Buy");
-        System.out.println("3. Add");
-        System.out.println("0. Quit");
-
-        // listen to keyboard and perform task
+        System.out.println("\n 1. View \n 2. Buy \n 3. Add \n 0. Quit ");
+         
         int option = -1;
         while (option != 0) {
 
-            // Using a try catch block to handle any wrong inputs
-            // error handling
+            // Using a try catch block to handle any exceptions that might occur from non-integer inputs
             try {
-
+                
+                // listen to keyboard and perform task
                 option = keyboard.nextInt();
-                // algorithm
+                
                 switch (option) {
                     case 0 -> {
                         System.out.print("Thanks for using our services, see you next time!");
@@ -63,8 +59,8 @@ public class ArtsPrintsSystem {
                         System.out.println("Incorrect option, please try again!");
                     }
                 }
-
-            } catch (InputMismatchException e) {
+            } 
+            catch (InputMismatchException e) {
                 System.out.println("Incorrect input, please enter a number from the menu options");
                 keyboard.next();
             }
@@ -73,14 +69,8 @@ public class ArtsPrintsSystem {
             if (option != 0) {
                 System.out.println("");
                 System.out.println("MENU: ");
-                System.out.println("");
-                System.out.println("1. View");
-                System.out.println("2. Buy");
-                System.out.println("3. Add");
-                System.out.println("0. Quit");
-            }
-
+                System.out.println("\n 1. View \n 2. Buy \n 3. Add \n 0. Quit ");
+            }   
         }
-
     }
 }
