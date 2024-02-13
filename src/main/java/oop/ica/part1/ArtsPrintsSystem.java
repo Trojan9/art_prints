@@ -32,9 +32,8 @@ public class ArtsPrintsSystem {
         while (option != 0) {
             
             // Display the menu
-            if (option != 0) {
-                menu();
-            }
+            menu();
+            
             
             // Using a try catch block to handle any exceptions that might occur from non-integer inputs
             try {
@@ -46,11 +45,11 @@ public class ArtsPrintsSystem {
                 switch (option) {
                     case 0 -> System.out.print("Thanks for using our services, see you next time!");
                     
-                    case 1 ->display("View");
+                    case 1 ->view();
                     
-                    case 2 ->display("Buy");
+                    case 2 ->buy();
                     
-                    case 3 ->display("Add");
+                    case 3 ->add();
                     
                     default -> System.out.println("Incorrect option, please try again!");
                     
@@ -64,6 +63,10 @@ public class ArtsPrintsSystem {
                 keyboard.next();
             }
             
+            if(option!=0){
+            //reset value to local variable
+            option=-1;
+            }
             
         }//end of while loop
         
@@ -80,11 +83,22 @@ public class ArtsPrintsSystem {
         // Display name and advertising phrase
         System.out.println("ART PRINTS");
         System.out.println("Welcome to ART PRINTS, Where Walls Become Canvases: Art Prints for Every Space!");
+      
     }//end of welcome function
     
-    static void display(String choice){
+    static void buy(){
         // Display choice
-        System.out.println("Your selected option is: ");
-        System.out.println(choice);
-    }//end of display function
+        System.out.println("Your selected option is:\nBUY");
+    }//end of buy function
+    
+     static void view(){
+        // Display choice
+        System.out.println("Your selected option is:\nVIEW");
+    }//end of view function
+     
+     static void add(){
+        // Display choice
+        System.out.println("Your selected option is:\nADD");
+    }//end of add function
+    
 }
