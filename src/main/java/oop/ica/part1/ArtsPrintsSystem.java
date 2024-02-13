@@ -60,13 +60,12 @@ public class ArtsPrintsSystem {
                 //validation method
                 //if value is not an integer, error is thrown
                 System.err.println("Incorrect input, please enter a number from the menu options");
-                keyboard.next();
+                
+                //reset value to local variable
+                option=-1;
+                keyboard.nextLine();
             }
             
-            if(option!=0){
-            //reset value to local variable
-            option=-1;
-            }
             
         }//end of while loop
         
